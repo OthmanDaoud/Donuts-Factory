@@ -6,11 +6,20 @@ if (gender == "male") {
 } else if (gender == "female") {
   alert("Welcome Ms. " + name);
 } else {
-  alert("Welcome " + name);
+  while (gender != "male" || gender != "female") {
+    gender = prompt("Please Enter Your Gender (male/female)");
+    if (gender == "male") {
+      alert("Welcome Mr. " + name);
+      break;
+    } else if (gender == "female") {
+      alert("Welcome Ms. " + name);
+      break;
+    }
+  }
 }
 
-let order = confirm(
-  "Do you want to order (Donut, Coffee, Ice creame or Bakery)?"
+let order = prompt(
+  "Do you want to order (Donut, Coffee, Ice creame or Bakery) (yes/no)?"
 );
 
 let ordername = prompt(
@@ -18,4 +27,10 @@ let ordername = prompt(
 );
 alert("Your order is getting prepared");
 
-console.log(name + " " + ordername);
+array = [name, gender, order, ordername];
+console.log("Your order: " + array);
+
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+// console.log(name + " " + ordername);

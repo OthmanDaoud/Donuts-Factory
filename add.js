@@ -1,7 +1,8 @@
 let name = prompt("Please Enter Your Name");
 
-function quastion() {
-  let gender = prompt("Please Enter Your Gender (male/female)");
+let gender = prompt("Please Enter Your Gender (male/female)");
+
+function gen() {
   if (gender == "male") {
     alert("Welcome Mr. " + name);
   } else if (gender == "female") {
@@ -19,7 +20,7 @@ function quastion() {
     }
   }
 }
-quastion();
+gen();
 
 let order = prompt(
   "Do you want to order (Donut, Coffee, Ice creame or Bakery) (yes/no)?"
@@ -36,4 +37,33 @@ console.log("Your order: " + array);
 for (let i = 0; i < array.length; i++) {
   console.log(array[i]);
 }
-// console.log(name + " " + ordername);
+console.log(name + " " + ordername);
+
+// Dom
+
+const dom = document.getElementById("dom");
+const inputName = document.createElement("p");
+const inputList = document.createElement("ol");
+const inputGender = document.createElement("li");
+const inputOrder = document.createElement("li");
+const inputTypeOrder = document.createElement("li");
+
+inputName.innerHTML = name;
+inputGender.innerHTML = gender;
+inputOrder.innerHTML = order;
+inputTypeOrder.innerHTML = ordername;
+
+dom.appendChild(inputName);
+dom.appendChild(inputList);
+inputList.appendChild(inputGender);
+inputList.appendChild(inputOrder);
+inputList.appendChild(inputTypeOrder);
+
+// Add paregragh
+
+const home = document.getElementsByClassName("content");
+const para = document.createElement("p");
+const text = document.createTextNode("You can order now the donuts on earth");
+
+home[0].appendChild(para);
+para.appendChild(text);
